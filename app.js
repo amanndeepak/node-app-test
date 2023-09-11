@@ -1,8 +1,5 @@
-const validator = require('validator')
 
+const chalk = require('chalk')
 
-
-const checkEmail = validator.isURL('www.google')
-
-
-console.log(checkEmail)
+const greenMsg = chalk.dim('Hello world!')
+console.log(greenMsg)
