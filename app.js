@@ -1,44 +1,11 @@
-// const yargs = require('yargs')
+const filesys = require('fs')
 
-
-// command = process.argv[2]
-
-// if (command == "list") {
-//     console.log("this is list")
-// }
-
-// yargs.command({
-//     command: 'list',
-//     describe: 'show list names',
-//     builder: {
-//         title: {
-//             describe: "note"
-//         }
-//     },
-//     handler: function (argv) {
-
-//         console.log("amandeep " + " singh" + argv)
-//     }
-// })
-
-// console.log(yargs.argv)
-
-const fielsystem = require('fs')
-
-mycommand = process.argv[2];
-
-
-if (mycommand == "add") {
-    fielsystem.writeFileSync("abc.txt", "folder added by user");
-    console.log("file created successfully !! :-) ")
-} else if (mycommand = "remove") {
-    fielsystem.unlinkSync("abc.txt");
-    console.log("file removed successfully !")
-} else {
-    console.log("please give valid command")
+const book = {
+    title: "ego is the enemy",
+    author: "ryan Holiday"
 }
-
-
-
-
+const mybookJOSN = JSON.stringify(book)
+filesys.writeFileSync("1-Json.json", mybookJOSN)
+const data = filesys.readFileSync('1-Json.json')
+console.log("data is " + (JSON.parse(data.toString())).title)
 
